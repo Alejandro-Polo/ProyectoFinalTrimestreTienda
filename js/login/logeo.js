@@ -1,3 +1,5 @@
+import { generarToken } from './token.js';
+
 /* La función ObtenerUsuarios obtiene la informacion del servidor , la convierte en json y la devuelve.
     Esto me permite saber los usuarios de mi propio json server
 */
@@ -18,6 +20,8 @@ export const validarUser = async (user, pass) => {
     );
     // dependiendo si usuarioEncontrado es true o false mostraremos una alerta o una redirección a otra pagina
     if (usuarioEncontrado) {
+        const token = generarToken({ username: usuarioEncontrado.username });
+        localStorage.setItem("token", token);
         alert(`Bienvenido ${usuarioEncontrado.username}, has iniciado sesión con éxito.`);
         window.location.href = "captcha.html";
     } else {
@@ -32,5 +36,4 @@ document.getElementById("botonLogin").addEventListener("click", () => {
     const user = document.getElementById("loginUsuario").value;
     const pass = document.getElementById("loginPassword").value;
     validarUser(user, pass);
-    console.log(user,pass);
 });
