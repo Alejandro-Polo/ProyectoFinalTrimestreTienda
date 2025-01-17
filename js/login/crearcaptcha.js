@@ -26,6 +26,7 @@ const crearCaptcha = () =>{
 
     document.body.appendChild(divCaptcha)  
 
+    // Evento que al hacer click comprueba si se ha superado el captcha
     botonCaptcha.addEventListener("click", () => {
         const userInput = inputCaptcha.value; 
         
