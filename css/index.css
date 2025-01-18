@@ -1,0 +1,215 @@
+/* Variables con los colores que definen a Nintendo */
+:root {
+    --color-primario: #E60012;
+    --color-secundario: #0099FF;
+    --color-blanco: #FFFFFF;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.header__titulo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menú */
+.header__menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.header__menu-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.header__submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-secundario);
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.header__menu-item:hover .header__submenu {
+    display: block;
+}
+
+.header__submenu li {
+    padding: 5px 10px;
+}
+
+.header__submenu a {
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+.header__submenu a:hover {
+    text-decoration: underline;
+}
+
+/* Carrito */
+.header__carrito {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.header__contador {
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Botones */
+button {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-blanco); 
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario); 
+    box-shadow: 0 0 10px var(--color-primario);
+    transform: scale(1.05);
+}
+
+/* Productos */
+#productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 productos por fila */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Producto individual */
+.producto {
+    background-color: var(--color-secundario);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--color-blanco);
+}
+
+/* Imagen del producto */
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: var(--color-blanco);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.producto img:hover {
+    transform: scale(1.1);
+    animation: animacionsaltitos 0.5s ease infinite alternate;
+}
+
+@keyframes animacionsaltitos {
+    from { transform: scale(1.1) translateY(0); }
+    to { transform: scale(1.1) translateY(-5px); }
+}
+
+/* Nombre del producto */
+.producto h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Precio */
+.producto p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Botones en cada producto */
+.producto button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Responsividad */
+
+/* Móvil: 576px */
+@media (max-width: 576px) {
+    #productos {
+        grid-template-columns: 1fr; /* Una columna */
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header__titulo {
+        margin-bottom: 10px;
+    }
+
+    .header__menu {
+        justify-content: center;
+    }
+}
+
+/* Tablet: 577px a 1024px */
+@media (min-width: 577px) and (max-width: 1024px) {
+    #productos {
+        grid-template-columns: repeat(2, 1fr); /* 2 productos por fila */
+    }
+
+    header {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .header__carrito {
+        justify-content: flex-end;
+        width: 100%;
+    }
+}
+
+/* Desktop: 1024px en adelante */
+@media (min-width: 1025px) {
+    #productos {
+        grid-template-columns: repeat(4, 1fr); /* 4 productos por fila */
+    }
+}

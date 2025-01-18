@@ -11,20 +11,25 @@ const crearCaptcha = () =>{
     }
 
     const divCaptcha = document.createElement("div")
+    divCaptcha.classList.add("captcha"); 
+
     const textoCaptcha = document.createElement("p")
+    textoCaptcha.classList.add("captcha__texto");
     textoCaptcha.textContent= captcha;
     divCaptcha.appendChild(textoCaptcha) 
 
     const inputCaptcha = document.createElement("input")
+    inputCaptcha.classList.add("captcha__input");
     inputCaptcha.type="text"
     divCaptcha.appendChild(inputCaptcha) 
 
     const botonCaptcha =document.createElement("button")
+    botonCaptcha.classList.add("captcha__boton");
     botonCaptcha.textContent="Verificar"
     botonCaptcha.type="button"
-    divCaptcha.appendChild(botonCaptcha) 
+    divCaptcha.appendChild(botonCaptcha)
 
-    document.body.appendChild(divCaptcha)  
+    document.body.appendChild(divCaptcha)
 
     // Evento que al hacer click comprueba si se ha superado el captcha
     botonCaptcha.addEventListener("click", () => {

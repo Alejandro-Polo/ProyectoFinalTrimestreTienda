@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="icon" href="nintendo_logo_icon_147258.ico" type="image/x-icon">
     <title>Login</title>
 </head>
 <body>
-    <label>Usuario:</label><br>
-    <input type="text" id="loginUsuario" required><br><br>
-    <label>Contraseña:</label><br>
-    <input type="password" id="loginPassword" required><br><br>
-    <button type="submit" id="botonLogin">Iniciar Sesión</button>
+    <div class="login">
+    <label class="login__label">Usuario:</label><br>
+    <input type="text" id="loginUsuario" class="login__input" required><br><br>
+    <label class="login__label">Contraseña:</label><br>
+    <input type="password" id="loginPassword" class="login__input" required><br><br>
+    <button type="submit" id="botonLogin" class="login__button">Iniciar Sesión</button>
+    </div>
     <script type="module" src="./js/login/logeo.js"></script>
     <!-- En proceso por ahora funciona -->
     <!-- <script src="js/login/crearlogin.js"></script> -->

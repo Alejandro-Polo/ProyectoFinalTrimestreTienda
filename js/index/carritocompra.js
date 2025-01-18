@@ -42,7 +42,7 @@ const cargarCarritoDesdeLocalStorage = () => {
         // se convierte el texto json en js con json.parse
         carrito = JSON.parse(carritoGuardado);
     }
-    actualizarContadorCarrito(); 
+    actualizarContadorCarrito();
 };
 
 
@@ -52,6 +52,7 @@ const verCarrito = () => {
     // si el carrito esta vacio se muestra un texto indicaandolo
     if (Object.keys(carrito).length === 0) {
         const mensaje = document.createElement("p");
+        mensaje.classList.add("carrito__mensaje"); 
         mensaje.textContent = "El carrito está vacío.";
         contenedor.appendChild(mensaje);
     } else {
@@ -59,21 +60,25 @@ const verCarrito = () => {
         for (const productoId in carrito) {
             const producto = carrito[productoId];
             const divProducto = document.createElement("div");
-            divProducto.classList.add("producto-carrito");
+            divProducto.classList.add("carrito__productos");
 
             const nombre = document.createElement("h3");
+            nombre.classList.add("carrito__producto__titulo");
             nombre.textContent = producto.nombre;
             divProducto.appendChild(nombre);
 
             const cantidad = document.createElement("p");
+            cantidad.classList.add("carrito__producto__texto");
             cantidad.textContent = `Cantidad: ${producto.cantidad}`;
             divProducto.appendChild(cantidad);
 
             const serie = document.createElement("p");
+            serie.classList.add("carrito__producto__texto");
             serie.textContent = `Serie de Amiibo: ${producto.serie}`;
             divProducto.appendChild(serie);
             
             const btnEliminar = document.createElement("button");
+            btnEliminar.classList.add("carrito__producto__btn");
             btnEliminar.textContent = "Eliminar";
             btnEliminar.onclick = () => eliminarDelCarrito(productoId);
             divProducto.appendChild(btnEliminar);

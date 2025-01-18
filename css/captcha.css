@@ -1,0 +1,98 @@
+/* Usando los mismos estilos que el login ya que los dos se supone que forman esa entrada inicial a la web */
+/* En esta página solo uso dos variables */
+:root {
+    --color-primario: #E60012;
+    --color-secundario: #0099FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+    background-size: 200% 200%;
+    animation: movimientoFondo 6s infinite linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Animación que da la sensación de movimiento al fondo */
+@keyframes movimientoFondo {
+    0% {
+        background-size: 200% 200%;
+        background-position: 0% 50%;
+    }
+    50% {
+        background-size: 250% 250%;
+        background-position: 50% 50%;
+    }
+    100% {
+        background-size: 200% 200%;
+        background-position: 100% 50%;
+    }
+}
+
+/* Contenedor captcha */
+.captcha {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 320px;
+    text-align: center;
+}
+
+/* Texto del captcha */
+.captcha__texto {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-secundario);
+    margin-bottom: 20px;
+}
+
+/* Input del captcha */
+.captcha__input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid var(--color-primario);
+    border-radius: 5px;
+    background: #f8f8f8;
+    color: #333;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.captcha__input:focus {
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 8px var(--color-secundario);
+}
+
+/* Botón */
+.captcha__boton {
+    background: var(--color-primario);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.captcha__boton:hover {
+    background: var(--color-secundario);
+    box-shadow: 0 0 10px var(--color-secundario);
+}
+

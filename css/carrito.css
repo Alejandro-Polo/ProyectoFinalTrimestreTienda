@@ -1,0 +1,149 @@
+/* Variables globales */
+:root {
+    --color-principal: #0099FF;
+    --color-texto: #FFFFFF;
+    --color-secundario: #E60012; 
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Título principal */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--color-texto);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de los productos */
+.carrito {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Productos del carrito */
+.carrito__productos {
+    background-color: white;
+    color: #000; /* Texto negro fijo */
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.carrito__productos:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Título de cada producto */
+.carrito__producto__titulo {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--color-secundario);
+}
+
+/* Información del producto */
+.carrito__producto__texto {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Botón de cada producto */
+.carrito__producto__btn {
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carrito__producto__btn:hover {
+    background-color: #B2000F; /* Más oscuro que var(--color-secundario) */
+    transform: scale(1.1);
+    animation: sacudir 0.4s ease-in-out;
+}
+
+/* Animación de sacudida */
+@keyframes sacudir {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    50% {
+        transform: translateX(3px);
+    }
+    75% {
+        transform: translateX(-3px);
+    }
+}
+
+/* Mensaje de carrito vacío */
+.carrito__mensaje {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: var(--color-texto);
+    animation: aparecer 0.5s ease-in-out;
+}
+
+/* Animación que hace como que el mensaje aparece de la nada */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Botones generales */
+button {
+    background-color: white;
+    color: var(--color-secundario);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    transform: scale(1.1);
+}
